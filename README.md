@@ -1,35 +1,35 @@
 # SQLandActiveRecord
 How many users are there?
-  `User.count`
+  `'User.count'`
     `50`
 
 What are the 5 most expensive items?
-  `Item.order(price: :desc).limit(5)`
-      `[#<Item:0x007faab4370260
+  `'Item.order(price: :desc).limit(5)'`
+      `[<Item:0x007faab4370260
       id: 25,
       title: "Small Cotton Gloves",
       category: "Automotive, Shoes & Beauty",
       description: "Multi-layered modular service-desk",
       price: 9984>,
-      #<Item:0x007faab436bee0
+      <Item:0x007faab436bee0
       id: 83,
       title: "Small Wooden Computer",
       category: "Health",
       description: "Re-engineered fault-tolerant adapter",
       price: 9859>,
-      #<Item:0x007faab436bcd8
+      <Item:0x007faab436bcd8
       id: 100,
       title: "Awesome Granite Pants",
       category: "Toys & Books",
       description: "Upgradable 24/7 access",
       price: 9790>,
-      #<Item:0x007faab436bad0
+      <Item:0x007faab436bad0
       id: 40,
       title: "Sleek Wooden Hat",
       category: "Music & Baby",
       description: "Quality-focused heuristic info-mediaries",
       price: 9390>,
-      #<Item:0x007faab436b940
+      <Item:0x007faab436b940
       id: 60,
       title: "Ergonomic Steel Car",
       category: "Books & Outdoors",
@@ -38,7 +38,7 @@ What are the 5 most expensive items?
 
 What's the cheapest book?
   `Item.order(price: :asc).where("category =  ?", "Books").limit(1)`
-    `  [#<Item:0x007faab425ace0
+      `[#<Item:0x007faab425ace0
       id: 76,
       title: "Ergonomic Granite Chair",
       category: "Books",
@@ -68,7 +68,7 @@ Correct Virginie Mitchell's address to "New York, NY, 10108".
 
 How much would it cost to buy one of each tool?
   `Item.where(category: "Tools").sum("price")`
-    `7383`
+    7383
 
 How many total items did we sell?
   `Order.sum("quantity")`
@@ -77,12 +77,13 @@ How many total items did we sell?
 How much was spent on books?
   `money = Item.where("category like '%Books%'").collect do |item|
       item.price * item.order.sum("quantity")
-      end` `money.reduce(:=+)`
+      end `
+      `money.reduce(:=+)`
         `1081352`
 
 Simulate buying an item by inserting a User for yourself and an Order for that User.
   `User.create(first_name: "Jon", last_name: "Krouse", email: "jk@haha.net")`
-     #<User:0x007faab45427f0 id: 51, first_name: "Jon", last_name: "Krouse", email: "jk@haha.net">
+     `#<User:0x007faab45427f0 id: 51, first_name: "Jon", last_name: "Krouse", email: "jk@haha.net">`
   `Order.create(user_id: "51", item_id: 13, quantity: "13")`
     `#<Order:0x007faab4488d00
     id: 378,
