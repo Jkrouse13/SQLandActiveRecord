@@ -5,31 +5,31 @@ How many users are there?
 
 What are the 5 most expensive items?
   `'Item.order(price: :desc).limit(5)'`
-      `[<Item:0x007faab4370260
+      `[#<Item:0x007faab4370260
       id: 25,
       title: "Small Cotton Gloves",
       category: "Automotive, Shoes & Beauty",
       description: "Multi-layered modular service-desk",
       price: 9984>,
-      <Item:0x007faab436bee0
+      #<Item:0x007faab436bee0
       id: 83,
       title: "Small Wooden Computer",
       category: "Health",
       description: "Re-engineered fault-tolerant adapter",
       price: 9859>,
-      <Item:0x007faab436bcd8
+      #<Item:0x007faab436bcd8
       id: 100,
       title: "Awesome Granite Pants",
       category: "Toys & Books",
       description: "Upgradable 24/7 access",
       price: 9790>,
-      <Item:0x007faab436bad0
+      #<Item:0x007faab436bad0
       id: 40,
       title: "Sleek Wooden Hat",
       category: "Music & Baby",
       description: "Quality-focused heuristic info-mediaries",
       price: 9390>,
-      <Item:0x007faab436b940
+      #<Item:0x007faab436b940
       id: 60,
       title: "Ergonomic Steel Car",
       category: "Books & Outdoors",
