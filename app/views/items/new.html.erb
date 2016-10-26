@@ -1,3 +1,4 @@
+<h1 class="text-center">Create a new item!</h1>
 <div class="text-center">
   <%= form_for @item do |f| %>
     <div>
@@ -17,7 +18,7 @@
       <%= f.text_field :price %>
     </div>
     <div>
-      <%= f.submit%>
+      <%= f.submit 'CREATE!', class: 'btn btn-primary'%>
     </div>
   <% end %>
 </div>

@@ -1,6 +1,6 @@
 <%= link_to "Home", root_path, class:"btn btn-success" %>
 
 <h1 class="text-center"><%= @item.title%></h1>
-<h5 class="text-center"><%= @item.description %></h5>
-<h6 class="text-center"><%= @item.category %></h6>
-<h4 class="text-center"><%= number_to_currency(@item.price/100.0) %></h4>
+<h5 class="text-center">Description: <%= @item.description %></h5>
+<h6 class="text-center">Category: <%= @item.category %></h6>
+<h4 class="text-center">Price: <%= number_to_currency(@item.price/100.0) %></h4>

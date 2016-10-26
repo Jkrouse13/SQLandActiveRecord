@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.all
+    @items = Item.joins(:orders).group(:id).order("sum(quantity) DESC")
   end
 
   def show
@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
     @item.category = params[:item][:category]
     @item.price = params[:item][:price]
     @item.save
-    redirect_to item_path(id: @item.id)
+    redirect_to root_path
   end
 
 end
