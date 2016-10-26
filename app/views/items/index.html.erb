@@ -1,3 +1,5 @@
+<%= link_to "Create new item", new_item_path %>
+
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
 
@@ -36,6 +38,10 @@
                 </td>
                 <td>
                     <%= item.orders.sum(:quantity) %>
+
+                </td>
+                <td>
+                    <%= link_to "EDIT", edit_item_path(id: item.id) %>
                 </td>
 
             </tr>
