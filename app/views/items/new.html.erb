@@ -1,24 +1,38 @@
-<h1 class="text-center">Create a new item!</h1>
-<div class="text-center">
-  <%= form_for @item do |f| %>
-    <div>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
+<div class="row">
+    <div class="col-md-12">
+        <% if @item.errors.any? %>
+        <ul>
+            <% @item.errors.full_messages.each do |error| %>
+            <li>
+                <h3><%= error %></h3>
+            </li>
+            <% end %>
+        </ul>
+        <% end %>
     </div>
-    <div>
-      <%= f.label :description %>
-      <%= f.text_field :description %>
+</div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 text-center">
+        <%= form_for @item do |f| %>
+        <div>
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+        </div>
+        <div>
+            <%= f.label :description %>
+            <%= f.text_field :description %>
+        </div>
+        <div>
+            <%= f.label :category %>
+            <%= f.text_field :category %>
+        </div>
+        <div>
+            <%= f.label :price %>
+            <%= f.text_field :price %>
+        </div>
+        <div>
+            <%= f.submit 'CREATE!', class: 'btn btn-primary'%>
+        </div>
+        <% end %>
     </div>
-    <div>
-      <%= f.label :category %>
-      <%= f.text_field :category %>
-    </div>
-    <div>
-      <%= f.label :price %>
-      <%= f.text_field :price %>
-    </div>
-    <div>
-      <%= f.submit 'CREATE!', class: 'btn btn-primary'%>
-    </div>
-  <% end %>
 </div>
