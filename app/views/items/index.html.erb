@@ -1,4 +1,6 @@
-<%= link_to "Create new item", new_item_path %>
+<div class="button">
+    <%= link_to "Create new item", new_item_path, class: "btn btn-primary" %>
+</div>
 
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
@@ -21,6 +23,9 @@
                 <th>
                     Units Ordered
                 </th>
+                <th>
+                    Wanna Edit?
+                </th>
             </tr>
             <% @items.each do |item| %>
             <tr class="text-center">
@@ -34,14 +39,14 @@
                     <%= item.category %>
                 </td>
                 <td>
-                    <%=  item.price %>
+                    <%=  number_to_currency(item.price/100.0) %>
                 </td>
                 <td>
                     <%= item.orders.sum(:quantity) %>
 
                 </td>
                 <td>
-                    <%= link_to "EDIT", edit_item_path(id: item.id) %>
+                    <%= link_to "EDIT", edit_item_path(id: item.id), class: "btn btn-info" %>
                 </td>
 
             </tr>
