@@ -68,7 +68,7 @@ Correct Virginie Mitchell's address to "New York, NY, 10108".
 
 How much would it cost to buy one of each tool?
   `Item.where(category: "Tools").sum("price")`
-    7383
+    `7383`
 
 How many total items did we sell?
   `Order.sum("quantity")`
@@ -91,3 +91,13 @@ Simulate buying an item by inserting a User for yourself and an Order for that U
     item_id: 13,
     quantity: 13,
     created_at: Tue, 25 Oct 2016 18:05:39 UTC +00:00>`
+
+Adventurer Mode
+
+What item was ordered most often? Grossed the most money?
+`orders = Item.joins(:order).select('item *', 'sum(order.quantity) as total').order('total :desc').first`
+
+What user spent the most?
+
+
+What were the top 3 highest grossing categories?
